@@ -14,7 +14,7 @@ class ScreenMakerTest extends TestCase
 {
 
     /**
-     * Должен вернуть url картинки
+     * Должен вернуть массив с url картинки
      */
     public function testGet_img_dir()
     {
@@ -23,10 +23,4 @@ class ScreenMakerTest extends TestCase
         $this->assertTrue(is_array($res));
     }
 
-    public function test_1()
-    {
-        $res = parse_url('https://work-timer.pro/');
-        $this->assertTrue(true);
-
-    }
 }
