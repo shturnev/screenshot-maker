@@ -31,7 +31,12 @@ class ScreenMaker
         $w = (is_numeric($array['w'])) ? $array['w'] : 640;
         $h = (is_numeric($array['h'])) ? $array['h'] : 480;
 
+        if(!file_exists(__DIR__."/../vendor/microweber/screen/bin/phantomjs")){
+          throw new \Exception('Не верный путь к файлу');
+        }
+
         $screenCapture = new Capture($array['url']);
+        $screenCapture->setBinPath("./");
         $screenCapture->setWidth($w);
         $screenCapture->setHeight($h);
         $screenCapture->setImageType('jpg');

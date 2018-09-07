@@ -158,7 +158,8 @@ if ($_COOKIE['token'] != $auth['token']) {
         $.post('/api.php', forPost, (res)=>{
           this.loader = false;
           if(!res){ alert('Ошибка: нет ответа от сервера'); }
-          else if(res.error){ alert(`Ошибка: ${res.error}`); }
+          else if(res.error){
+            console.log(`Ошибка: ${res.error}`); alert(`Ошибка: ${res.error}`);  }
           else{
             let newItem   = res.response;
             newItem.show  = false;
@@ -175,8 +176,8 @@ if ($_COOKIE['token'] != $auth['token']) {
     },
     created(){
       const startData = [
-        {url:"http://google.com", name: "Google"},
-        {url:"http://yahoo.com", name: "Yahoo"},
+        // {url:"http://google.com", name: "Google"},
+        // {url:"http://yahoo.com", name: "Yahoo"},
         {url:"http://bing.com", name: "Bing"},
       ];
 
